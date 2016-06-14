@@ -1,0 +1,12 @@
+{
+  "name": "clicks-app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "backbone": "~1.1.0",
+    "jquery-dist": "jquery/jquery-dist",
+    "underscore": "~1.8.3",
+    "requirejs": "~2.2.0",
+    "requirejs-text":"~2.0.10"
+  }
+}
