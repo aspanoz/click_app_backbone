@@ -18,15 +18,16 @@ define([
         this.$el.append(html);
     },
     startCountdown: function(e) {
-        this.countdownShowView = {};
-        countdownModel = new CountdownCollection();
+        var countdownShowView = {};
+        var countdownModel = new CountdownCollection();
         countdownModel.add({ recovery_time: this.model.get('recovery_time')*1000 + Date.parse(new Date()) });
-        this.countdownShowView = new CountdownShowView({
+        countdownShowView = new CountdownShowView({
             model: countdownModel.last(),
-            el: $('#' + this.model.get('id')),
+            el: $('#' + this.model.get('id'))
         });
+        this.$('#' + this.model.get('id')).html(countdownShowView.render());
         $('#' + this.model.get('id') + '-button').removeClass('clicker');
-        this.listenTo(this.countdownShowView, 'stopCountdown', this.stopCountdown);
+        this.listenTo(countdownShowView, 'stopCountdown', this.stopCountdown);
         Backbone.trigger('addPoint', this.model.get('points'));
     },
     stopCountdown: function(e) {

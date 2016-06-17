@@ -12,15 +12,13 @@ define([
         var template = _.template(countdownShowTemplate);
         var vars = this.model.update().toJSON();
         var html = template(vars);
-        this.$el.html(html);
+        return html;
     },
     start: function() {
-        var vars = this.model;
         this.interval = setInterval(function() {
-            this.render();
+            this.$el.html(this.render());
             if (this.model.getTime() == '') this.stop();
         }.bind(this), 1000);
-        return this;
     },
     stop: function() {
         clearInterval(this.interval);
