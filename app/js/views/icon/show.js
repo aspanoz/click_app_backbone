@@ -3,9 +3,9 @@ define([
   'underscore',
   'backbone',
   'text!/templates/icon/show.html',
-  'collections/countdowns',
-  'views/countdown/show'
-], function($, _, Backbone, iconShowTemplate, CountdownCollection, CountdownShowView){
+  'views/countdown/show',
+  'models/countdown'
+], function($, _, Backbone, iconShowTemplate, CountdownShowView, CountdownModel){
   var IconShowView = Backbone.View.extend({
     tagName: 'div',
     events: {
@@ -13,16 +13,14 @@ define([
     },
     initialize: function(){
         var template = _.template(iconShowTemplate);
-        var vars = {icon: this.model.attributes};
+        var vars = this.model.toJSON();
         var html = template(vars);
         this.$el.append(html);
     },
     startCountdown: function(e) {
-        var countdownShowView = {};
-        var countdownModel = new CountdownCollection();
-        countdownModel.add({ recovery_time: this.model.get('recovery_time')*1000 + Date.parse(new Date()) });
-        countdownShowView = new CountdownShowView({
-            model: countdownModel.last(),
+        var countdownModel = new CountdownModel({ recovery_time: this.model.get('recovery_time')*1000 + Date.parse(new Date()) });
+        var countdownShowView = new CountdownShowView({
+            model: countdownModel,
             el: $('#' + this.model.get('id'))
         });
         this.$('#' + this.model.get('id')).html(countdownShowView.render());

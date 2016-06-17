@@ -5,8 +5,9 @@ define([
   'collections/icons',
   'views/icon/show',
   'collections/points',
-  'views/point/show'
-], function($, _, Backbone, IconsCollection, IconShowView, PointsCollection, PointShowView) {
+  'views/point/show',
+  'models/countdown'
+], function($, _, Backbone, IconsCollection, IconShowView, PointsCollection, PointShowView, PointModel) {
   var IconsListView = Backbone.View.extend({
 
     el: $('#container'),
@@ -34,12 +35,6 @@ define([
         points: 10,
         title: 'Little time'
       });
-
-    this.points = new PointsCollection();
-      this.points.add({
-        points: 139
-      });
-
     },
 
     render: function() {
@@ -50,13 +45,13 @@ define([
             });
             this.$el.append(iconShowView.render().el);
         }.bind(this));
-
         var pointShowView = new PointShowView({
-            model: this.points.last()
+            model: new PointModel({
+                points: 139,
+                title: 'Points'
+            })
         });
-
         this.$el.append(pointShowView.render());
-
         return this;
     },
 
