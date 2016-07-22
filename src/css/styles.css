@@ -1,0 +1,5 @@
+@value default_color from './components/color.css';
+.whatever {
+  color: default_color;
+  composes: top_default from './components/layout.css';
+}

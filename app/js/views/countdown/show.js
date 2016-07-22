@@ -17,7 +17,7 @@ define([
     start: function() {
         this.interval = setInterval(function() {
             this.$el.html(this.render());
-            if (this.model.getTime() == '') this.stop();
+            if (this.model.getTime() === '') this.stop();
         }.bind(this), 1000);
     },
     stop: function() {

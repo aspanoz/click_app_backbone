@@ -57,7 +57,7 @@ define([
 
   });
 
-    //console.log(JSON.stringify(IconsListView));
+    // console.log(JSON.stringify(IconsListView));
   return IconsListView;
 });
 

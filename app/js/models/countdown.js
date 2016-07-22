@@ -25,14 +25,14 @@ define([
             if ( days > 0 ) {
                 countdowText = days + ':';
             }
-            if ( (hours > 0) || countdowText !='') {
+            if ( (hours > 0) || countdowText !=='') {
                 countdowText = countdowText + ('0' + hours).slice(-2) + ':';
             }
-            if ( (minutes > 0) || countdowText !='') {
+            if ( (minutes > 0) || countdowText !=='') {
                 countdowText = countdowText + ('0' + minutes).slice(-2) + ':';
             }
-            if ( (seconds > 0) || countdowText !='') {
-                countdowText = (countdowText != '' ? countdowText : '00:') + ('0' + seconds).slice(-2);
+            if ( (seconds > 0) || countdowText !=='') {
+                countdowText = (countdowText !== '' ? countdowText : '00:') + ('0' + seconds).slice(-2);
             }
             return countdowText;
         }

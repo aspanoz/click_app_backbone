@@ -1,12 +1,12 @@
 Test backbone app
 
-Use asdf version manager to install nodejs 6.2.1 https://github.com/asdf-vm/asdf
+.tool-versions config for version manager adsf https://github.com/asdf-vm/asdf
 
 Install app dependencies:
 
 	npm install -g bower
 
-	npm install -g gulp
+	npm install -g gulpjs/gulp.git#4.0
 
 	npm install
 
@@ -15,3 +15,7 @@ Install app dependencies:
 Run app:
 
 	gulp
+
+Run build:
+
+    gulp build
