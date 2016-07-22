@@ -11,10 +11,10 @@ define([
   });
 
   var initialize = function(){
-    var app_router = new AppRouter;
+    var app_router = new AppRouter();
 
     Backbone.application = {};
-    if (Backbone.application.router == undefined) {
+    if (Backbone.application.router === undefined) {
         Backbone.application.router = app_router;
     }
 
