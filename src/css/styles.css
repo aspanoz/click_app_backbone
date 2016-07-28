@@ -3,3 +3,10 @@
   color: default_color;
   composes: top_default from './components/layout.css';
 }
+.container {
+  color: default_color;
+  composes: container_default from './components/layout.css';
+}
+.icons {
+  composes: container_flex from './components/layout.css';
+}

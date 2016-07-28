@@ -9,6 +9,6 @@ gulp.task('stylus', () => {
   return gulp.src('src/stylus/**/*.styl')
     .pipe($.plumber({ errorHandler: onError }))
     .pipe($.stylus())
+    .pipe($.plumber.stop())
     .pipe(gulp.dest('src/css'));
-    ;
 });

@@ -12,6 +12,7 @@ gulp.task('scripts', () => {
     .pipe($.sourcemaps.init())
     //.pipe($.babel())
     .pipe($.sourcemaps.write('.'))
+    .pipe($.plumber.stop())
     .pipe(gulp.dest('.tmp/js'))
     .pipe(reload({stream: true}))
     ;

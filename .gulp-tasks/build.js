@@ -15,5 +15,6 @@ gulp.task('build', () => {
         .pipe($.if('*.js', $.uglify()))
         .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
         .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+        .pipe($.plumber.stop())
         .pipe(gulp.dest('dist'));
 });

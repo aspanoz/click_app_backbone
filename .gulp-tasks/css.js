@@ -15,9 +15,9 @@ const $ = gulpLoadPlugins();
 const wstream = fs.createWriteStream('cssBrowserCompatible.log');
 
 const doiuseConfig = {
-    browsers: [ 'ie >= 9', '> 1%', 'last 2 versions' ],
+    browsers: [ 'ie >= 10', '> 1%', 'last 2 versions' ],
     ignoreFiles: ['**/normalize.css'],
-    onFeatureUsage: function (usageInfo) {
+    onFeatureUsage(usageInfo) {
         wstream.write(usageInfo.message + '\n');
     }
 };
@@ -33,7 +33,7 @@ gulp.task('css', () => {
     const processors = [
         autoprefixer({ browsers: ['last 2 version'] }),
         modules({ getJSON: getJSONFromCssModules }),
-        doiuse(doiuseConfig),
+        //doiuse(doiuseConfig),
         reporter({ clearMessages: true }),
     ];
 

@@ -1,11 +1,28 @@
-._top_default_exiz6_1 {
+._top_default_xt5pj_1 {
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 30px;
+  text-align: center;
   opacity: 0.2;
   background-color: #ffffe0;
-  border: 2px solid #00f;
+  border: 2px solid #ff6347;
 }
-._whatever_6y1y8_2 {
-  color: tomato;
+._container_default_xt5pj_9 {
+  text-align: center;
+}
+._container_flex_xt5pj_12 {
+  border: 1px solid #add8e6;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+._whatever_vtujz_2 {
+  color: blue;
+}
+._container_vtujz_6 {
+  color: blue;
+}
+._icons_vtujz_10 {
 }
